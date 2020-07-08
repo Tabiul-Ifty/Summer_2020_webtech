@@ -1,0 +1,29 @@
+<admissions>
+	<admission>
+		<sl>23</sl>
+		<name>jhon carter</name>
+		<admission_date>
+			<date>25</date>
+			<month>12</month>
+			<year>2015</year>
+		</admission_date>
+	</admission>
+	<admission>
+		<sl>29</sl>
+		<name>bob marshal</name>
+		<admission_date>
+			<date>13</date>
+			<month>01</month>
+			<year>2005</year>
+		</admission_date>
+	</admission>
+	<admission>
+		<sl>35</sl>
+		<name>clerk kent</name>
+		<admission_date>
+			<date>17</date>
+			<month>06</month>
+			<year>2005</year>
+		</admission_date>
+	</admission>
+</admissions>
