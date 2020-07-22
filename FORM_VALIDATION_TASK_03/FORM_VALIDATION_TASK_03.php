@@ -33,13 +33,15 @@
 				    	}
 
 				    ?>"
-				    >
-				</form>
+				    ><br>
+				 
+					</form>
+					<input type="submit" name="" value="submit">
 
 				<form method="post">
 					Email <br>
 				    <input type="Email" name="email" value="" size="90px" placeholder="">
 				</form>
-	    										
+	    		<input type="submit" name="" value="submit">								
 	</body>
 </html>
