@@ -6,7 +6,7 @@
 <body>
 
 	<table width="100%" border="1">
-		<tr height = "150px">
+		<tr height = "100px">
 			<td align="left">
 				<img src="Mt.jpg" width="50px" height="50px">
 			</td>
@@ -84,19 +84,21 @@
 				<h2>Take your skill to the next level!</h2>
 				<center>
 					<h2>Games That you want to master</h2>
-					<select width = "150px">
+					<form>
+						<select width = "150px">
 
-						<option>Players Unknown Battel Ground</option>
-						<option>Fortnite</option>
-						<option>DOTA2</option>
-						<option>League of Legendes</option>
-						<option>COD</option>
-						<option>CS:GO</option>
-					</select>
-					<br>
-					<br>
+							<option>Players Unknown Battel Ground</option>
+							<option>Fortnite</option>
+							<option>DOTA2</option>
+							<option>League of Legendes</option>
+							<option>COD</option>
+							<option>CS:GO</option>
+						</select>
+						<br>
+						<br>
 
-					<input type="submit" name="submit" value="Find Masters">
+					<input type="submit" name="submit" value="Find Masters"></form>
+					
 
 				</center>
 
