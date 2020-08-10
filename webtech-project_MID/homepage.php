@@ -1,3 +1,15 @@
+<?php
+	session_start();
+
+	if(isset($_SESSION['status'])){
+		if($_SESSION['status'] == "OK"){
+
+			$connection = mysqli_connect("127.0.0.1", "root", "", "mid"); 
+			$result = mysqli_query($connection, "select * from user");
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +27,8 @@
 				
 				<a href="profile.php">&ensp;Profile</a>&ensp;
 				<a href="settings.php">Settings</a>&ensp;
+				<a href="login.php">Login</a>&ensp;
+				<a href="reg.php">SignUp</a>&ensp;
 				<a href="wallet.php">Wallet</a>&ensp;
 
 				<a href="https://www.w3schools.com">
@@ -189,15 +203,20 @@
 		</tr>
 		
 
-
-
-
-
 	</table>
-
 
 
 
 
 </body>
 </html>
+
+
+<?php
+}else{
+		header('location: login.php');
+		}
+	}else{
+		header('location: login.php');
+	}
+?>

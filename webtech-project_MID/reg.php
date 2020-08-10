@@ -23,7 +23,7 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" name="submit" value="Submit"></td>
+					<td><input type="submit" name="submit" value="Submit"><a href="homepage.php">&ensp;Cancel</a>&ensp;</td>
 				</tr>
 			</table>
 		</fieldset>

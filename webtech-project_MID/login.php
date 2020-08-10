@@ -27,8 +27,9 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" name="submit" value="Submit"></td>
+					<td><input type="submit" name="submit" value="Submit">&ensp;<a href="reg.php">SignUp</a></td>
 				</tr>
+			
 			</table>
 		</fieldset>
 	</form>

@@ -4,39 +4,49 @@
 	if(isset($_POST['submit'])){
 
 		$uname 		= $_POST['uname'];
-		$password 	= ($_POST['password']);
-
+		$password 	= $_POST['password'];
 
 		if(empty($uname) || empty($password) ){
 			echo "null submission found!";
 		}
+		else if (!filter_var($email,FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $uname) ) {
+				header("location: login.php?error=invalidEmail,Name");
+				exit();
+			}
+		else if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+
+				header("location: login.php?error=invalidEmail");
+				exit();
+			}
+		elseif (!preg_match("/^[a-zA-Z0-9]*$/", $uname)) {
+				header("location: login.php?error=invalidName");
+				exit();
+		}
 		
 		else{
-			if(isset($_COOKIE['uname']) && isset($_COOKIE['password'])){
-				if($uname == $_COOKIE['uname'] && $password == $_COOKIE['password']){
-					
-					setcookie('status', "OK", time()+3600, '/');
-					header('location: homepage.php');
+			
+			$con = mysqli_connect("127.0.0.1", "root", "", "mid");
+			$sql = "SELECT name , password from user where name ='".$uname."' and password='".$password."'";
 
-				}
-				else{
-					header('location: login.php?msg=invalid_username/password');
-				}
+		$sql = "SELECT name , password from user where name ='$uname' and password='$password'";
+			
+			$result = mysqli_query($con, $sql);
+			$row = mysqli_fetch_assoc($result);
+
+			if(count($row) > 0){
+				$_SESSION['name'] = $row['name'];
+				$_SESSION['status'] = "OK";
+				header('location: homepage.php');
 			}
 			else{
-				echo "don't have any account!";
+				header('location: login.php?msg=invalid_username/password');
 			}
-			
 		}	
-
-	}else{
-		//echo "invalid request";
-		header('location: login.php?msg=submitbuttonerror');
 	}
 
-
-
-
-
+	else{
+		//echo "invalid request";
+		header('location: login.php');
+	}
 
 ?>

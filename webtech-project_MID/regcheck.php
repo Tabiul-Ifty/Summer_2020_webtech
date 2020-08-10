@@ -1,32 +1,51 @@
 <?php
-	
-	session_start();
-	
-	if(isset($_POST['submit'])){
 
-		$uname 		= $_POST['uname'];
-		$email 		= $_POST['email'];
-		$password 	= ($_POST['password']);
+$con = mysqli_connect("127.0.0.1", "root", "", "mid");
+ 
 
+if($con === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
 
-		if(empty($uname) || empty($password) || empty($email) ){
-			echo "null submission found!";
-		}else{
-			//$_SESSION['uname'] 		= $uname;
-			//$_SESSION['password'] 	= $password;
-			//$_SESSION['email'] 		= $email;
+$uname = mysqli_real_escape_string($con, $_REQUEST['uname']);
+$password = mysqli_real_escape_string($con, $_REQUEST['password']);
+$email = mysqli_real_escape_string($con, $_REQUEST['email']);
 
-
-			setcookie('uname', $uname, time()+3600, '/');
-			setcookie('password', $password, time()+3600, '/');
-			setcookie('email', $email, time()+3600, '/');
-
-			header('location: login.php');
-		}	
-
-	}else{
-		//echo "invalid request";
-		header('location: login.php');
+if(empty($uname) || empty($password) || empty($email) )
+	{
+			//echo "null submission found!";
+			header('location: reg.php?error=emptyfields');
+			exit();
 	}
+else if (!filter_var($email,FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $uname) ) {
+		header("location: reg.php?error=invalidEmailName");
+		exit();
+	}
+else if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+
+		header("location: reg.php?error=invalidEmail");
+		exit();
+	}
+elseif (!preg_match("/^[a-zA-Z0-9]*$/", $uname)) {
+		header("location: reg.php?error=invalidName");
+		exit();
+	}
+
+else{
+
+	$sql = "INSERT INTO user (name,email,password) VALUES ('$uname', '$email', '$password')";
+	if(mysqli_query($con, $sql)){
+
+	    header('location: login.php');
+	} 
+
+	else{
+	    echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
+	}
+
+
+}
+
+mysqli_close($con);
 
 ?>
