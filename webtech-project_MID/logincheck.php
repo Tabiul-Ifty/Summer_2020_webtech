@@ -9,15 +9,6 @@
 		if(empty($uname) || empty($password) ){
 			echo "null submission found!";
 		}
-		else if (!filter_var($email,FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $uname) ) {
-				header("location: login.php?error=invalidEmail,Name");
-				exit();
-			}
-		else if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
-
-				header("location: login.php?error=invalidEmail");
-				exit();
-			}
 		elseif (!preg_match("/^[a-zA-Z0-9]*$/", $uname)) {
 				header("location: login.php?error=invalidName");
 				exit();

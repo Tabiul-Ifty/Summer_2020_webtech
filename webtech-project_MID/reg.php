@@ -6,6 +6,7 @@
 <body>
 
 	<form action="regcheck.php" method="post">
+		<center>
 		<fieldset>
 			<legend>Signup</legend>
 			<table>
@@ -27,6 +28,7 @@
 				</tr>
 			</table>
 		</fieldset>
+		</center>
 	</form>
 	
 </body>

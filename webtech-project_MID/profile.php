@@ -81,7 +81,7 @@
 				<h2>Take your skill to the next level!</h2>
 				<center>
 					<h2>Games that you want to Master!</h2>
-					<form>
+					<form action="master.php" method="post">
 						<select width = "150px">
 
 						<option>Players Unknown Battel Ground</option>
@@ -122,7 +122,8 @@
 				<center>
 					<h3>Transaction</h3><br>
 					<hr>
-					<p>Wallet</p>
+					<a href="wallet.php">Wallet</a>	
+					<br>	
 					<hr>
 					<p>Purchase History</p>
 					<br>
@@ -180,9 +181,9 @@
 					<hr>
 					<br>
 
-					<form method="post" enctype="multipart/form-data">
+					<form method="post" action = "fileupload.php" enctype="multipart/form-data">
 			
-						File <input type="file" name="myfile">
+						File : <input type="file" name="myfile">
 						<br>
 						<br>
 						<input type="submit" name="submit" value="Upload">

@@ -14,24 +14,28 @@
 <body>
 
 	<form action="logincheck.php" method="POST">
+		<center>
 		<fieldset>
 			<legend>SignIn</legend>
 			<table>
-				<tr>
-					<td>Username</td>
-					<td><input type="text" name="uname"></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td><input type="password" name="password"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" name="submit" value="Submit">&ensp;<a href="reg.php">SignUp</a></td>
-				</tr>
+				
+					<tr>
+						<td>Username</td>
+						<td><input type="text" name="uname"></td>
+					</tr>
+					<tr>
+						<td>Password</td>
+						<td><input type="password" name="password"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit" name="submit" value="Submit">&ensp;<a href="reg.php">SignUp</a></td>
+					</tr>
+
 			
 			</table>
 		</fieldset>
+		</center>
 	</form>
 
 

@@ -27,9 +27,11 @@
 				
 				<a href="profile.php">&ensp;Profile</a>&ensp;
 				<a href="settings.php">Settings</a>&ensp;
-				<a href="login.php">Login</a>&ensp;
-				<a href="reg.php">SignUp</a>&ensp;
 				<a href="wallet.php">Wallet</a>&ensp;
+				<!--a href="login.php">Login</a-->
+				<a href="reg.php">SignUp</a>&ensp;
+				<a href="logout.php">Logout</a>&ensp;
+				
 
 				<a href="https://www.w3schools.com">
 				<img border="0" src="question.png" width="30px" height="30px">
@@ -98,7 +100,7 @@
 				<h2>Take your skill to the next level!</h2>
 				<center>
 					<h2>Games That you want to master</h2>
-					<form>
+					<form action="master.php" method="post">
 						<select width = "150px">
 
 							<option>Players Unknown Battel Ground</option>
