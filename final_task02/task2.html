@@ -1,0 +1,148 @@
+<html>
+	<head>
+		<title>Lab Task</title>
+	</head>
+	<body>
+
+		<center>
+
+			<form name="myForm" action ="abc.php" method="post" onsubmit="return validation()">
+
+					<table width="100%" border="1">
+
+						<tr height="100px">
+							<td colspan="3"><center><h2>Personal Profile</h2></center></td>
+						</tr>
+
+						<tr >
+							<td width ="10%">
+								
+								Name 
+								
+							</td>
+							<td>
+								<input type="text" name="name" value="" size="90px" placeholder="">
+							</td>
+							<td width = "15%" id =" nameMsg">	
+							</td>
+						</tr>
+
+
+						<tr>
+							<td width ="10%">
+								
+								Email 
+								
+							</td>
+							<td>
+								<input type="Email" name="email" value="" size="90px" placeholder="">
+							</td>
+							<td width = "5%" id= "emailMsg" name = "fau">	
+							</td>
+						</tr>
+
+
+						<tr><td width ="10%">
+								
+								Gender 
+								
+							</td>
+							<td>
+								<input type="radio" name="gender">Male 
+								<input type="radio" name="gender"> Female
+								<input type="radio" name="gender">Other 
+							</td>
+							<td width = "5%">	
+							</td></tr>
+
+
+						<tr>
+							<td width ="10%">
+							
+								DOB 
+								
+							</td>
+							<td>
+								<input type="number" name="dob1" value="" size="10px" placeholder="">/<input type="number" name="dob2" value="" size="10px" placeholder="">/<input type="text" name="number" value="" size="10px" placeholder=""> (dd/mm/yy)
+							</td>
+							<td width = "5%">	
+							</td>
+						</tr>
+
+						<tr>
+							<td width ="10%">
+							
+								BloodGroup 
+							
+							</td>
+							<td>
+								<select name = "bg">
+									<option>A-</option>
+									<option>A+</option>
+									<option>B+</option>
+									<option>AB-</option>
+									<option>AB+</option>
+									<option>B-</option>
+									<option>O+</option>
+									<option>O-</option>
+									
+								</select>
+					
+							</td>
+							<td width = "5%">	
+							</td>
+						</tr>
+
+
+						<tr>
+							<td width ="10%">
+								
+								Degree 
+								
+							</td>
+							<td>
+								<input type="checkbox" name="degree"> SSC
+								<input type="checkbox" name="degree"> HSC
+								<input type="checkbox" name="degree"> BSc.
+								<input type="checkbox" name="degree"> MSc.
+							</td>
+							<td width = "5%">	
+							</td>
+						</tr>
+
+
+
+						<tr>
+							<td width ="10%">
+								
+								Photo 
+								
+							</td>
+							<td>
+								<input type="File" name="myfile" value="Browse"> No File Selected
+							</td>
+							<td width = "5%">	
+							</td>
+						</tr>
+
+
+						<tr height="50px" >
+							<td colspan="3" align="center"></td>
+						</tr>
+
+						<tr height="50px">
+							<td colspan="3" align="right">
+								<input type="submit" name="" value="submit">
+								<input type="reset" name="" value="reset">
+							</td>
+						</tr>
+
+					</table>
+
+				</form>	
+				<script type="text/javascript" src="validation.js"></script>
+					
+		</center>
+
+	</body>
+</html>
