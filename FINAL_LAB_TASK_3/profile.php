@@ -5,7 +5,9 @@
 		if($_SESSION['status'] == "OK"){
 
 			$connection = mysqli_connect('127.0.0.1', 'root', '', 'mid_mini'); 
-			$result = mysqli_query($connection, "select * from final");
+			$result = mysqli_query($connection, "SELECT id, username , email from final where id = '$id', username ='$username' and email='$email'");
+			//$result = mysqli_query($con, $sql);
+			$row = mysqli_fetch_assoc($result);
 
 ?>
 
@@ -22,7 +24,6 @@
 					<td>ID</td>
 					<td>username</td>
 					<td>email</td>
-					<td>UserType</td>
 				</tr>";
 
 	while ($row = mysqli_fetch_assoc($result)) {
@@ -30,7 +31,6 @@
 					<td>{$row['id']}</td>
 					<td>{$row['username']}</td>
 					<td>{$row['email']}</td>
-					<td>{$row['usertype']}</td>
 				</tr>";
 	}
 	$data .= "</table>";

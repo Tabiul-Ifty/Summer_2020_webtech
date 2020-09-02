@@ -5,7 +5,7 @@
 </head>
 <body>
 
-	<form action="regcheck.php" method="post">
+	<form id = "myForm"action="regcheck.php" method="post">
 		<fieldset>
 			<legend>Signup</legend>
 			<table>
@@ -36,10 +36,11 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" name="submit" value="Submit"></td>
+					<td><input type="submit" name="submit" value="Submit " onclick="checkForm()"></td>
 				</tr>
 			</table>
 		</fieldset>
 	</form>
+	<script type="text/javascript" src="script,js"></script>
 </body>
 </html>
