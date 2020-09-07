@@ -1,43 +1,34 @@
-<!DOCTYPE html>
+<?php 
 
-<html>
-<head>
-	<title>user List</title>
-</head>
-<body>
+  require_once('db.php');
+  $search = $_POST['search'];
+  $con = dbConnection();
+  $query = "SELECT * FROM rows WHERE type = 'employer' AND rowname LIKE '%$search%';";
+  $result = mysqli_query($con, $query);
 
-	<h1>Employee List</h1>
-	
-	<br>
-
-	<?php
-		//$user = getAllUser();
-	?>
-
-	<br>
-
-	<table border=1> 
-		<tr>
-			<td>ID</td> 
-			<td>NAME</td>
-			<td>password</td> 
-			<td>Email</td>
-			<td>Action</td>
+  echo "<table border=1>
+  
+    <tr>
+		<td>Employer Name</td>
+	    <td>Company Name</td>
+	    <td>Contact No</td>
+	    <td>rowname</td>
 		</tr>
-		<?php for($i=0; $i != count($user); $i++ ){ ?>
+
+		<?php for($i=0; $i != count($row); $i++ ){ ?>
 			<tr>
-				<td><?= $user[$i]['id'] ?></td>
-				<td><?= $user[$i]['username'] ?></td>
-				<td><?= $user[$i]['password'] ?></td>
-				<td><?= $user[$i]['email'] ?> </td>
+				<td><?= $row[$i]['employer_name'] ?></td>
+				<td><?= $row[$i]['company_name'] ?></td>
+				<td><?= $row[$i]['contact_no'] ?></td>
+				<td><?= $row[$i]['rowname'] ?> </td>
 				<td>
-					<a href="edit.php?id=<?=$user[$i]['id']?>"> Edit</a> |
-					<a href="delete.php?id=<?=$user[$i]['id']?>"> Delete</a> 
+					<a href="edit.php?id=<?=$row[$i]['id']?>"> Edit</a> |
+					<a href="delete.php?id=<?=$row[$i]['id']?>"> Delete</a> 
 
 				</td>
 			</tr>
+	</tr>
+		</table>
 		<?php } ?>
-	</table>
-
-</body>
-</html>
+  
+?>
