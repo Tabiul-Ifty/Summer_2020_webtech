@@ -35,7 +35,7 @@
 
 	<h1>Login page</h1>
 
-	<form action="../php/loginController.php" method="post">
+	<form action="../php/loginController.php" method="post" onsubmit="return validateform()">
 		<fieldset>
 			<legend>Login</legend>
 			<table>
@@ -56,3 +56,50 @@
 	</form>
 </body>
 </html>
+<script type="text/javascript">
+	"use strict"
+
+function validate(){
+	//var username  = document.getElementById('username').value;
+	//var password  = document.getElementById('userpassword').value;
+	//var error = false;
+	/*if(username == ""){
+		document.getElementById('userMsg').innerHTML = "Username Can't left empty!";
+		error = true;
+	}else if(password == ""){
+		document.getElementById('passMsg').innerHTML = "PasswordCan't left empty!";
+		error =true;
+	}*/
+
+	var name=document.form1.username.value;  
+	var password=document.form1.password.value;  
+	  
+	if (name==null || password==""){  
+	  alert("Name and password can't be blank");  
+	  return false;  
+	}else if(password.length<6){  
+	  alert("Password must be at least 6 characters long.");  
+	  return false;  
+	  }  
+	}  
+	if(error){
+		return false;
+	}else{
+		return true;
+	}
+	
+
+var f2 = function(){
+	var username = document.getElementById('username').value;
+	var password = document.getElementById('userpassword').value;
+	
+	if(username != ''){
+		document.getElementById('userMsg').innerHTML = "";
+	}
+
+	if(password != ''){
+		document.getElementById('passMsg').innerHTML = "";
+	}
+
+
+</script>
