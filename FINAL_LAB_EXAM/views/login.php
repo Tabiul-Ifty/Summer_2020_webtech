@@ -60,17 +60,7 @@
 	"use strict"
 
 function validate(){
-	//var username  = document.getElementById('username').value;
-	//var password  = document.getElementById('userpassword').value;
-	//var error = false;
-	/*if(username == ""){
-		document.getElementById('userMsg').innerHTML = "Username Can't left empty!";
-		error = true;
-	}else if(password == ""){
-		document.getElementById('passMsg').innerHTML = "PasswordCan't left empty!";
-		error =true;
-	}*/
-
+	
 	var name=document.form1.username.value;  
 	var password=document.form1.password.value;  
 	  
